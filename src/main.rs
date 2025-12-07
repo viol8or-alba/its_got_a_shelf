@@ -2,7 +2,7 @@ use bevy::prelude::*;
 use bevy_ecs_ldtk::prelude::*;
 use systems::startup::setup;
 
-use crate::{bundles::{elf::ElfBundle, goal::GoalBundle, player::PlayerBundle, wall::WallBundle}, resources::level_walls::LevelWalls, systems::update::{cache_wall_locations, move_player_from_input, translate_grid_coords_entities}};
+use crate::{bundles::{elf::ElfBundle, goal::GoalBundle, player::PlayerBundle, wall::WallBundle}, resources::level_walls::LevelWalls, systems::update::{cache_wall_locations, check_goal, move_player_from_input, translate_grid_coords_entities}};
 
 mod bundles;
 mod resources;
@@ -13,7 +13,7 @@ fn main() {
         .add_plugins(DefaultPlugins.set(ImagePlugin::default_nearest()))
         .add_plugins(LdtkPlugin)
         .add_systems(Startup, setup)
-        .add_systems(Update, (move_player_from_input, translate_grid_coords_entities, cache_wall_locations ))
+        .add_systems(Update, (move_player_from_input, translate_grid_coords_entities, cache_wall_locations, check_goal))
         .insert_resource(LevelSelection::index(0))
         .init_resource::<LevelWalls>()
         .register_ldtk_entity::<ElfBundle>("Elf")
