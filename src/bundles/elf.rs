@@ -1,4 +1,7 @@
-use bevy::{ecs::{bundle::Bundle, component::Component}, sprite::Sprite};
+use bevy::{
+    ecs::{bundle::Bundle, component::Component},
+    sprite::Sprite,
+};
 use bevy_ecs_ldtk::{GridCoords, LdtkEntity};
 #[derive(Default, Component)]
 pub(crate) struct Elf;

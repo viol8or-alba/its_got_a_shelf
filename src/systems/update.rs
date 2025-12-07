@@ -1,7 +1,23 @@
-use bevy::{asset::Assets, ecs::{message::MessageReader, query::{Changed, With}, system::{Query, Res, ResMut}}, input::{ButtonInput, keyboard::KeyCode}, math::IVec2, transform::components::Transform};
-use bevy_ecs_ldtk::{GridCoords, LdtkProjectHandle, LevelEvent, LevelSelection, assets::{LdtkProject, LevelMetadataAccessor}};
+use bevy::{
+    asset::Assets,
+    ecs::{
+        message::MessageReader,
+        query::{Changed, With},
+        system::{Query, Res, ResMut},
+    },
+    input::{ButtonInput, keyboard::KeyCode},
+    math::IVec2,
+    transform::components::Transform,
+};
+use bevy_ecs_ldtk::{
+    GridCoords, LdtkProjectHandle, LevelEvent, LevelSelection,
+    assets::{LdtkProject, LevelMetadataAccessor},
+};
 
-use crate::{bundles::{goal::Goal, player::Player, wall::Wall}, resources::level_walls::LevelWalls};
+use crate::{
+    bundles::{goal::Goal, player::Player, wall::Wall},
+    resources::level_walls::LevelWalls,
+};
 
 const GRID_SIZE: i32 = 24;
 

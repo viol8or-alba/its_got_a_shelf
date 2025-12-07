@@ -1,4 +1,9 @@
-use bevy::{asset::AssetServer, camera::{Camera2d, OrthographicProjection, Projection}, ecs::system::{Commands, Res}, transform::components::Transform};
+use bevy::{
+    asset::AssetServer,
+    camera::{Camera2d, OrthographicProjection, Projection},
+    ecs::system::{Commands, Res},
+    transform::components::Transform,
+};
 use bevy_ecs_ldtk::LdtkWorldBundle;
 
 pub(crate) fn setup(mut commands: Commands, asset_server: Res<AssetServer>) {
